@@ -1,0 +1,95 @@
+@use "../abstracts/mixins" as mix;
+@use "../abstracts/variables" as var;
+@use "sass:math";
+
+.container {
+  @extend %section;
+
+  .wrapper {
+    display: flex;
+    gap: var.$gutter-medium;
+
+    @include mix.tablet-styles {
+      flex-direction: column;
+    }
+  }
+
+  .flow {
+    @include mix.background($background-color: var.$background-color-gray);
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+
+    @include mix.tablet-styles {
+      width: 100%;
+    }
+
+    ol li {
+      font-size: 30px;
+      border-bottom: 1px solid rgb(161, 161, 161);
+      padding: 15px;
+
+      @include mix.mobile-l-styles {
+        font-size: 20px;
+      }
+    }
+  }
+
+  .stack-motto {
+    display: flex;
+    flex-direction: column;
+    gap: var.$gutter-medium;
+    width: 60%;
+
+    @include mix.tablet-styles {
+      width: 100%;
+    }
+
+    .stack {
+      @include mix.background($background-color: var.$background-color-gray);
+      height: 30%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+
+      .inner {
+        display: flex;
+        animation: moveRight 5s linear infinite;
+
+        .image-item {
+          min-width: 10%;
+          margin-right: 40px;
+        }
+
+        @keyframes moveRight {
+          0% {
+            transform: translateX(-100%);
+          }
+          100% {
+            transform: translateX(0);
+          }
+        }
+      }
+    }
+
+    .motto {
+      @include mix.background($background-color: var.$background-color-gray);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 70%;
+
+      p {
+        font-size: 30px;
+        width: 70%;
+
+        @include mix.tablet-styles {
+          width: 100%;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
