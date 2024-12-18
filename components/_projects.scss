@@ -15,11 +15,35 @@
       flex-direction: column;
     }
 
-    .card {
+    .card,
+    .card-coming {
       width: calc(50% - 5px);
+
+      img {
+        border-radius: 10px;
+        width: 100%;
+        height: 400px;
+
+        @include mix.tablet-styles {
+          height: 300px;
+        }
+      }
 
       @include mix.mobile-l-styles {
         width: 100%;
+      }
+    }
+
+    .card-coming {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+
+      p {
+        font-size: 24px;
+        color: black;
+        opacity: 90%;
+        margin-bottom: 0;
       }
     }
   }

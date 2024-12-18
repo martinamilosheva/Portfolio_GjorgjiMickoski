@@ -17,13 +17,12 @@
 
 @mixin h2($background-color) {
   background-color: $background-color;
-  border-radius: 25px;
-  font-size: 30px;
-  padding: 15px;
-  display: inline-block;
+  border-radius: 40px;
+  font-size: 25px;
+  padding: 10px 20px;
   font-weight: normal;
   text-align: center;
-  width: 150px;
+  width: fit-content;
 }
 
 @mixin background($background-color) {
